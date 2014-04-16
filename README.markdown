@@ -4,7 +4,8 @@ MiniCSV
 A tiny, fast, simple, single-file, BSD-licensed CSV parsing library in C.
 
 Should be able to handle CSV oddities: multi-lines, escaped rows,
-escaped characters in escaped rows and empty rows.
+escaped characters in escaped rows, empty rows, rows with a variable
+number of columns.
 
 Doesn't perform any heap allocations.
 
