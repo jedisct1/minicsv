@@ -22,9 +22,9 @@ int
 main(void)
 {
     char  *cols[10];
-    char   line[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiples\r\nlines\"\r\n"
+    char   buf[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiples\r\nlines\"\r\n"
         "second,line,\"has\",,empty,,,,columns\r\nremainder";
-    char  *r = line;
+    char  *r = buf;
     size_t cols_count;
     
     r = minicsv_parse_line(r, cols, &cols_count, sizeof cols / sizeof cols[0]);

@@ -3,8 +3,8 @@ MiniCSV
 
 A tiny, fast, simple, single-file, BSD-licensed CSV parsing library in C.
 
-Should be able to handle CSV oddities (multi-lines, escaped rows,
-escaped characters in escaped rows and empty rows).
+Should be able to handle CSV oddities: multi-lines, escaped rows,
+escaped characters in escaped rows and empty rows.
 
 Doesn't perform any heap allocations.
 
@@ -14,9 +14,9 @@ Usage
     #include "minicsv.h"
 
     char  *cols[10];
-    char   line[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiple\r\nlines\"\r\n"
+    char   buf[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiple\r\nlines\"\r\n"
         "second,line,\"has\",,empty,,,,columns\r\nremainder";
-    char  *r = line;
+    char  *r = buf;
     size_t cols_count;
 
     /* This parses the first row (which can extend to multiple lines) */
@@ -31,9 +31,10 @@ Usage
     /* Whatever is after the second row */
     printf("Remainder: [%s]\n", r);
 
-`minicsv_parse_line()` fills up to `cols_max` elements in `cols`, and
+`minicsv_parse_line()` fills up to `cols_max` pointers in `cols`, and
 returns the actual number of colums in `cols_count`, then returns a
 pointer to the next row.
 
-    char * minicsv_parse_line(char * const line, char ** const cols,
+    char * minicsv_parse_line(char * const buf, char ** const cols,
                               size_t * const cols_count_p, const size_t cols_max);
+

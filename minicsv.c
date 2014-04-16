@@ -62,11 +62,11 @@ _minicsv_parse_line_quote(const int c, char ** const pos_p,
 }
 
 char *
-minicsv_parse_line(char * const line, char ** const cols,
+minicsv_parse_line(char * const buf, char ** const cols,
                    size_t * const cols_count_p, const size_t cols_max)
 {
-    char *col_start = line;    
-    char *pos       = line;
+    char *col_start = buf;    
+    char *pos       = buf;
     int   c;    
     int   state = 0;
 
