@@ -33,8 +33,9 @@ Usage
     printf("Remainder: [%s]\n", r);
 
 `minicsv_parse_line()` fills up to `cols_max` pointers in `cols`, and
-returns the actual number of colums in `cols_count`, then returns a
-pointer to the next row.
+returns the actual number of colums in `cols_count`, as well as a
+pointer to the next row. Or a pointer to '\0' if there is nothing else
+to parse.
 
     char * minicsv_parse_line(char * const buf, char ** const cols,
                               size_t * const cols_count_p, const size_t cols_max);
