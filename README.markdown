@@ -9,6 +9,8 @@ number of columns, Windows or Unix-style line endings.
 
 Doesn't perform any heap allocations.
 
+MiniCSV is used by the [DNSCrypt](http://dnscrypt.org) client proxy.
+
 Usage
 -----
 
