@@ -23,11 +23,9 @@ Usage
     /* This parses the first row (which can extend to multiple lines) */
     /* and returns a pointer to the next row */
     r = minicsv_parse_line(r, cols, &cols_count, 10);
-    display_cols(cols, cols_count);
     
     /* Second row */
     r = minicsv_parse_line(r, cols, &cols_count, 10);
-    display_cols(cols, cols_count);
 
     /* Whatever is after the second row */
     printf("Remainder: [%s]\n", r);
