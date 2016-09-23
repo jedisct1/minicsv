@@ -28,9 +28,15 @@ main(void)
     size_t cols_count;
     
     r = minicsv_parse_line(r, cols, &cols_count, sizeof cols / sizeof cols[0]);
+    if (cols_count > sizeof cols / sizeof cols[0]) {
+        abort();
+    }
     display_cols(cols, cols_count);
     
     r = minicsv_parse_line(r, cols, &cols_count, sizeof cols / sizeof cols[0]);
+    if (cols_count > sizeof cols / sizeof cols[0]) {
+        abort();
+    }
     display_cols(cols, cols_count);
     
     printf("Remainder: [%s]\n", r);

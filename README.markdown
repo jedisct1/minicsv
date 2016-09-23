@@ -25,9 +25,15 @@ Usage
     /* This parses the first row (which can extend to multiple lines) */
     /* and returns a pointer to the next row */
     r = minicsv_parse_line(r, cols, &cols_count, 10);
-    
+    if (cols_count > 10) {
+        /* more than 10 columns found -- abort/throw error */
+    }
+
     /* Second row */
     r = minicsv_parse_line(r, cols, &cols_count, 10);
+    if (cols_count > 10) {
+        /* more than 10 columns found -- abort/throw error */
+    }
 
     /* Whatever is after the second row */
     printf("Remainder: [%s]\n", r);
