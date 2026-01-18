@@ -23,7 +23,7 @@ int
 main(void)
 {
     char  *cols[10];
-    char   buf[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiples\r\nlines\"\r\n"
+    char   buf[] = "first,line,has,\"comas,\"\"escaped\"\" characters\",and,\"multiple\r\nlines\"\r\n"
         "second,line,\"has\",,empty,,,,columns\r\nremainder";
     char  *r = buf;
     size_t cols_count;
